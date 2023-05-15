@@ -1,10 +1,12 @@
 import React from 'react';
+import { GlobalStyles } from './App.styled';
 
 function App() {
 	return (
-		<div>
+		<>
+			<GlobalStyles />
 			<h1>Hello, World</h1>
-		</div>
+		</>
 	);
 }
 
