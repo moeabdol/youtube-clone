@@ -1,17 +1,26 @@
 import { createGlobalStyle } from 'styled-components';
+import Colors from './utils/Colors';
+import RobotoRegular from './assets/fonts/Roboto-Regular.ttf';
 
 export const GlobalStyles = createGlobalStyle`
-	html {
-		box-sizing: border-box;
-		font-size: 16px;
+	@font-face {
+		font-family: 'Roboto';
+		src: url(${RobotoRegular}) format('truetype');
+		font-weight: 400;
+		font-style: normal;
 	}
 
-	*, *:before, *:after {
-		box-sizing: inherit;
-	}
-
-	body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+	* {
 		margin: 0;
 		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: 'Roboto', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		color: ${Colors.white};
+		background-color: ${Colors.black};
 	}
 `;
