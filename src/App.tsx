@@ -1,7 +1,8 @@
 import React from 'react';
-import { GlobalStyles } from './App.styled';
+import { GlobalStyles, BodyContainer } from './App.styles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 
 function App() {
@@ -9,11 +10,14 @@ function App() {
 		<BrowserRouter>
 			<GlobalStyles />
 			<Navbar />
-			<Routes>
-				<Route path="/search" element={<Home />} />
-				<Route path="/watch/:id" element={<Home />} />
-				<Route path="/" element={<Home />} />
-			</Routes>
+			<BodyContainer>
+				<Sidebar />
+				<Routes>
+					<Route path="/search" element={<Home />} />
+					<Route path="/watch/:id" element={<Home />} />
+					<Route path="/" element={<Home />} />
+				</Routes>
+			</BodyContainer>
 		</BrowserRouter>
 	);
 }

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Colors from './utils/Colors';
 import RobotoRegular from './assets/fonts/Roboto-Regular.ttf';
 
@@ -22,5 +22,18 @@ export const GlobalStyles = createGlobalStyle`
 		font-weight: 400;
 		color: ${Colors.white};
 		background-color: ${Colors.black};
+		min-height: 100vh;
 	}
+
+	#root {
+		width: 100%;
+		height: 100%;
+	}
+`;
+
+export const BodyContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: felx-start;
 `;
