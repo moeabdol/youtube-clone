@@ -48,7 +48,7 @@ export const Container = styled.div`
 	}
 
 	ul.links {
-		padding: 0 20px;
+		padding: 10px 20px;
 
 		li {
 			margin: 5px 0;
@@ -67,7 +67,7 @@ export const Container = styled.div`
 		justify-content: flex-start;
 		align-items: flex-start;
 		width: 100%;
-		padding: 20px 20px 10px 20px;
+		padding: 0px 20px 10px 20px;
 	}
 
 	.disclaimer {

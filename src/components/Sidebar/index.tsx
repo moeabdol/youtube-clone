@@ -171,7 +171,7 @@ function Sidebar() {
 
 			<div className="copyright">&copy; 2023 Google Inc.</div>
 			<div className="disclaimer">
-				This YouTube clone is for educational purposes only.
+				This YouTube clone is for educational purposes only
 			</div>
 		</Container>
 	);
