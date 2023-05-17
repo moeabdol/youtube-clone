@@ -81,4 +81,12 @@ export const Container = styled.div`
 		color: ${Colors.grey};
 		font-size: 0.75rem;
 	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&:hover::-webkit-scrollbar {
+		display: inherit;
+	}
 `;
