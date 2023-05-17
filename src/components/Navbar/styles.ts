@@ -8,7 +8,7 @@ export const Container = styled.div`
 	align-items: center;
 	flex: 1;
 	background-color: ${Colors.offBlack};
-	padding: 0 44px;
+	padding: 0 20px;
 	height: 60px;
 	opacity: 0.95;
 	position: sticky;
@@ -25,7 +25,7 @@ export const BrandContainer = styled.div`
 	font-size: 25px;
 
 	.hamburger {
-		margin-right: 30px;
+		margin-right: 25px;
 	}
 
 	.brand {
@@ -92,7 +92,7 @@ export const SearchContainer = styled.form`
 		&.submit {
 			height: 40px;
 			width: 60px;
-			margin-left: 14px;
+			margin-left: 10px;
 		}
 
 		&.microphone {
