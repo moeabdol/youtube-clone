@@ -29,6 +29,16 @@ export const GlobalStyles = createGlobalStyle`
 		width: 100%;
 		height: 100%;
 	}
+
+	::-webkit-scrollbar {
+		background-color: transparent;
+		width: 0.5rem;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: ${Colors.grey};
+		border-radius: 1rem;
+	}
 `;
 
 export const BodyContainer = styled.div`
