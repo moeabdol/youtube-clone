@@ -3,6 +3,7 @@ import { Container } from './styles';
 import useAppDispatch from '../../hooks/AppDispatch';
 import useAppSelector from '../../hooks/AppSelector';
 import { getHomePageVideos } from '../../store/slices/Youtube';
+import Spinner from '../../components/Spinner';
 
 function Home() {
 	const dispatch = useAppDispatch();
@@ -28,7 +29,7 @@ function Home() {
 
 	return (
 		<Container>
-			<div>Helloooooo</div>
+			<Spinner />
 		</Container>
 	);
 }

@@ -22,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-weight: 400;
 		color: ${Colors.white};
 		background-color: ${Colors.black};
-		min-height: 100vh;
+		height: 100vh;
 	}
 
 	#root {

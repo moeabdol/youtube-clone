@@ -37,7 +37,7 @@ export const BrandContainer = styled.div`
 		font-weight: 700;
 
 		svg {
-			fill: red;
+			fill: ${Colors.youtubeRed};
 		}
 
 		span {
@@ -126,7 +126,7 @@ export const UserActionsContainer = styled.div`
 			position: absolute;
 			top: -7px;
 			right: -5px;
-			background-color: red;
+			background-color: ${Colors.youtubeRed};
 			border-radius: 50px;
 			font-size: 0.7rem;
 			font-weight: 600;
