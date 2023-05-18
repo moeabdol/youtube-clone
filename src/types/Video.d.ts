@@ -2,13 +2,11 @@ interface Video {
 	id: string;
 	title: string;
 	description: string;
-	duration: string;
+	image: string;
 	publishedAt: string;
-	thumbnails: {
-		default: string;
-		medium: string;
-		high: string;
-	};
+	duration: string;
+	views: string;
+	age: string;
 	channelId: string;
 	channelTitle: string;
 	channelImage: string;

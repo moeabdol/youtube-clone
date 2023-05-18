@@ -1,12 +1,33 @@
 import axios from './axios';
 import { AxiosError } from 'axios';
 
-export const getHomePageVideos = async () => {
+export const searchVideos = async () => {
 	try {
-		const res = await axios.get(
+		return await axios.get(
 			'/search?q="reactjs projects"&maxResults=20&part=snippet&type=video'
 		);
-		return res.data.items;
+	} catch (error) {
+		if (error instanceof AxiosError) throw error.message;
+		else throw error;
+	}
+};
+
+export const getChannelsDetails = async (channelIds: string[]) => {
+	try {
+		return await axios.get(
+			`/channels?part=snippet,contentDetails&id=${channelIds.join(',')}`
+		);
+	} catch (error) {
+		if (error instanceof AxiosError) throw error.message;
+		else throw error;
+	}
+};
+
+export const getVideosDetails = async (videoIds: string[]) => {
+	try {
+		return await axios.get(
+			`/videos?part=contentDetails,statistics&id=${videoIds.join(',')}`
+		);
 	} catch (error) {
 		if (error instanceof AxiosError) throw error.message;
 		else throw error;
