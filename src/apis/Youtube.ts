@@ -1,10 +1,12 @@
 import axios from './axios';
 import { AxiosError } from 'axios';
 
-export const searchVideos = async () => {
+export const searchVideos = async (term: string, nextPageToken: string) => {
 	try {
 		return await axios.get(
-			'/search?q="reactjs projects"&maxResults=20&part=snippet&type=video'
+			`/search?q="${term}"&maxResults=20&part=snippet&type=video${
+				nextPageToken !== '' ? `&nextPageToken=${nextPageToken}` : ''
+			}`
 		);
 	} catch (error) {
 		if (error instanceof AxiosError) throw error.message;

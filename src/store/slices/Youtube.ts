@@ -25,22 +25,20 @@ const initialState: YoutubeSliceProps = {
 };
 
 export const getHomePageVideos = createAsyncThunk<
-	{ videos: Video[]; nextPageToken: string },
-	undefined,
+	{ videos: Video[]; nextPageToken?: string },
+	boolean,
 	{ state: RootState; rejectValue: string }
->('youtube/getHomePageVideos', async (_: undefined, thunkApi) => {
+>('youtube/getHomePageVideos', async (isNext, thunkApi) => {
 	try {
-		let res = await searchVideosApi();
+		const { nextPageToken } = thunkApi.getState().youtube;
+		const term = 'reactjs projects';
+		let res = await searchVideosApi(term, isNext ? nextPageToken ?? '' : '');
 		const searchVideos = res.data.items;
-		const nextPageToken = res.data.nextPageToken;
 		const { videoIds, channelIds } = getVideoAndChannelIds(searchVideos);
-
 		res = await getVideosDetailsApi(videoIds);
 		const videosDetails = res.data.items;
-
 		res = await getChannelsDetailsApi(channelIds);
 		const channelsDetails = res.data.items;
-
 		const videos = parseVideos(searchVideos, videosDetails, channelsDetails);
 		return { videos, nextPageToken };
 	} catch (error) {
@@ -60,7 +58,7 @@ const youtubeSlice = createSlice({
 			})
 			.addCase(getHomePageVideos.fulfilled, (state, action) => {
 				state.loading = false;
-				state.videos = action.payload.videos;
+				state.videos = [...state.videos, ...action.payload.videos];
 				state.nextPageToken = action.payload.nextPageToken;
 			})
 			.addCase(getHomePageVideos.rejected, (state, action) => {

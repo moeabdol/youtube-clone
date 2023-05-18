@@ -45,5 +45,7 @@ export const BodyContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	align-items: felx-start;
+	align-items: flex-start;
+	width: 100%;
+	height: calc(100% - 60px);
 `;
